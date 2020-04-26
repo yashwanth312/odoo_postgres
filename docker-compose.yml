@@ -1,0 +1,32 @@
+version: '2'
+services:
+        odooos:
+                image: odoo:12.0
+                volumes:
+                        - odoo_web_storage:/var/lib/odoo
+                depends_on:
+                        - postgresos
+                ports:
+                        - 5432:8069
+                environment:
+                        HOST: postgresos
+                        USER: yash
+                        PASSWORD: Yashwanth@3
+
+
+        postgresos:
+                image: postgres:10
+                volumes:
+                        - odoo_db_storage:/var/lib/postgresq/data/pgdata/
+                environment:
+                        POSTGRES_PASSWORD: Yashwanth@3
+                        POSTGRES_USER: yash
+                        POSTGRES_DB: postgres
+
+
+
+
+
+volumes:
+        odoo_web_storage:
+        odoo_db_storage:

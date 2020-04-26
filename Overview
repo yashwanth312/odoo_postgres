@@ -1,0 +1,4 @@
+THe following is a docker compose file that a creates a multi-teir architecture of the ODOO business management software with the integration of the POSTRESQL database.
+
+
+ODOO also one to create their own database. As it is postgres database integration there will be no loss of data.
